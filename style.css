@@ -462,6 +462,25 @@ ul {
     /* Rounded corners */
 }
 
+/* Video Video Container for Shorts */
+.portfolio-thumb.video-container {
+    height: 0;
+    padding-bottom: 177.77%;
+    /* 9:16 Aspect Ratio (16/9 = 56.25%, 9/16 = 177.77%) */
+    position: relative;
+    background: #000;
+}
+
+.portfolio-thumb.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    /* Match parent radius */
+}
+
 .portfolio-thumb {
     width: 100%;
     height: 300px;
