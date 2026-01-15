@@ -483,6 +483,35 @@ ul {
     /* Match parent radius */
 }
 
+/* Poster Aspect Ratio (2:3) */
+.portfolio-thumb.poster {
+    height: 0;
+    padding-bottom: 150%;
+    position: relative;
+    background: #111;
+}
+
+/* Logo Aspect Ratio (Square) */
+.portfolio-thumb.logo-thumb {
+    height: 0;
+    padding-bottom: 100%;
+    position: relative;
+    background: #111;
+    /* Or transparent/white depending on preference, sticking to dark theme */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.portfolio-thumb.logo-thumb::after {
+    content: 'LOGO';
+    /* Placeholder text */
+    color: var(--text-secondary);
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    opacity: 0.5;
+}
+
 .portfolio-thumb {
     width: 100%;
     height: 300px;
