@@ -389,17 +389,44 @@ ul {
     text-align: center;
 }
 
-.clients-bar {
+.clients-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 40px;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.client-item {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+    transition: transform 0.3s;
+}
+
+.client-item:hover {
+    transform: translateY(-5px);
+}
+
+.client-logo-placeholder {
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 60px;
-    opacity: 0.8;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    font-family: var(--font-heading);
 }
 
 .client-name {
     font-family: var(--font-heading);
-    font-size: 1.4rem;
+    font-size: 0.9rem;
     color: var(--text-primary);
     text-transform: uppercase;
     letter-spacing: 1px;
