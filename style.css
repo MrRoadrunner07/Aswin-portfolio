@@ -38,7 +38,7 @@ body {
     width: 100%;
     height: 100%;
     z-index: -2;
-    background: radial-gradient(circle at 50% 50%, #0a0a15 0%, #000000 100%);
+    background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
 }
 
 a {
