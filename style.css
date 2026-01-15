@@ -722,9 +722,20 @@ ul {
         justify-content: center;
     }
 
+    .contact-details {
+        align-items: center;
+    }
+
     .send-btn {
         align-self: center;
+        width: 100%;
+        /* Ensure full width on mobile for easier tapping */
     }
+}
+
+/* Logo Default State */
+.mobile-logo {
+    display: none;
 }
 
 /* Responsive */
@@ -743,5 +754,74 @@ ul {
 
     .portfolio-grid {
         grid-template-columns: 1fr;
+    }
+
+    /* Navbar Mobile Fixes */
+    .navbar {
+        padding: 15px 20px;
+        /* Reduce padding */
+    }
+
+    .desktop-logo {
+        display: none;
+    }
+
+    .mobile-logo {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        /* Hide nav links on mobile for now - typically requires hamburger menu */
+        /* To make them accessible, we'd need a JS toggle. 
+           For now, to fix "incorrect view", hiding colliding links is a start, 
+           or we can stack them if the user prefers. 
+           Let's stack them for a simple fix if no JS menu is requested yet. */
+        display: flex;
+        gap: 15px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(2, 2, 5, 0.95);
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
+        border-bottom: 1px solid var(--card-border);
+    }
+
+    /* Simple JS toggle would be better, but without it, let's keep it visible or hidden? 
+       If hidden, user can't nav. If visible, it takes space. 
+       Let's assume "incorrect" means broken layout. 
+       A scrollable horizontal list is another option. 
+       Let's try a horizontal scroll for links if they fit, or a smaller font.
+       Actually, replacing with a simple horizontal scroll is safer without JS. */
+
+    .nav-links {
+        display: flex;
+        position: static;
+        flex-direction: row;
+        overflow-x: auto;
+        padding: 10px 0;
+        width: 100%;
+        justify-content: flex-start;
+        gap: 20px;
+        background: transparent;
+        border: none;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .nav-links::-webkit-scrollbar {
+        display: none;
+    }
+
+    .nav-links a {
+        font-size: 0.8rem;
+        white-space: nowrap;
+    }
+
+    /* Make hero content more compact */
+    .hero-content {
+        padding: 20px;
     }
 }
