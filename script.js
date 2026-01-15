@@ -34,15 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // Configuration
-        const particleCount = 60; // Adjust for density
-        const connectionDistance = 150;
-        const color = 'rgba(0, 243, 255, '; // Cyan base
 
-        function resize() {
-            width = canvas.width = window.innerWidth;
-            height = canvas.height = window.innerHeight;
-        }
 
         class Particle {
             constructor() {
