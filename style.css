@@ -160,6 +160,8 @@ ul {
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid var(--card-border);
+    border-radius: 20px;
+    /* Global rounded corners */
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
@@ -246,6 +248,8 @@ ul {
     text-transform: uppercase;
     letter-spacing: 2px;
     border: 1px solid var(--accent-cyan);
+    border-radius: 50px;
+    /* Pill shape */
     position: relative;
     overflow: hidden;
     transition: 0.4s;
@@ -299,20 +303,17 @@ ul {
     background: rgba(255, 255, 255, 0.02);
     padding: 30px;
     border: 1px solid var(--card-border);
-    border-radius: 0;
-    /* Web3 often uses sharp edges or angled cuts */
+    border-radius: 20px;
+    /* Rounded corners */
+    /* Removed sharp edge corner hack */
     position: relative;
+    overflow: hidden;
+    /* Ensure content respects border radius */
 }
 
 .tools-list::after {
-    content: '';
-    position: absolute;
-    top: -1px;
-    right: -1px;
-    width: 20px;
-    height: 20px;
-    border-top: 2px solid var(--accent-magenta);
-    border-right: 2px solid var(--accent-magenta);
+    display: none;
+    /* Remove sharp corner decoration */
 }
 
 .tools-list h3 {
@@ -348,6 +349,8 @@ ul {
     background: linear-gradient(145deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
     padding: 50px 30px;
     border: 1px solid var(--card-border);
+    border-radius: 20px;
+    /* Rounded corners */
     transition: 0.4s;
     position: relative;
 }
@@ -448,6 +451,8 @@ ul {
     cursor: pointer;
     overflow: hidden;
     border: 1px solid var(--card-border);
+    border-radius: 20px;
+    /* Rounded corners */
 }
 
 .portfolio-thumb {
