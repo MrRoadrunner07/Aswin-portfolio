@@ -238,6 +238,13 @@ ul {
     margin-right: auto;
 }
 
+.hero-actions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
 .cta-button {
     display: inline-block;
     padding: 18px 50px;
@@ -823,5 +830,24 @@ ul {
     /* Make hero content more compact */
     .hero-content {
         padding: 20px;
+    }
+
+    /* Responsive Hero Buttons */
+    .hero-actions {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        align-items: center;
+    }
+
+    .cta-button {
+        padding: 15px 30px;
+        /* Smaller padding on mobile */
+        width: 100%;
+        /* Full width buttons for better touch targets */
+        max-width: 300px;
+        /* Prevent them from getting too wide on tablets */
+        text-align: center;
+        font-size: 0.9rem;
     }
 }
