@@ -809,10 +809,11 @@ ul {
         position: static;
         flex-direction: row;
         overflow-x: auto;
-        padding: 10px 0;
+        padding: 5px 0;
         width: 100%;
-        justify-content: flex-start;
-        gap: 20px;
+        justify-content: space-between;
+        gap: 5px;
+        /* Tighter gap */
         background: transparent;
         border: none;
         -webkit-overflow-scrolling: touch;
@@ -825,6 +826,7 @@ ul {
     .nav-links a {
         font-size: 0.8rem;
         white-space: nowrap;
+        padding: 5px;
     }
 
     /* Make hero content more compact */
