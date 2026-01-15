@@ -6,6 +6,33 @@ document.addEventListener('DOMContentLoaded', () => {
         const ctx = canvas.getContext('2d');
         let width, height;
         let particles = [];
+        let scrollY = window.scrollY;
+
+        // Configuration
+        const particleCount = 60; // Adjust for density
+        const connectionDistance = 150;
+        const color = 'rgba(0, 243, 255, '; // Cyan base
+        const scrollEffectSpeed = 0.5; // Speed of background movement relative to scroll
+
+        function resize() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        }
+
+        window.addEventListener('scroll', () => {
+            const newScrollY = window.scrollY;
+            const deltaY = newScrollY - scrollY;
+            scrollY = newScrollY;
+
+            // Shift all particles based on scroll
+            particles.forEach(p => {
+                p.y -= deltaY * scrollEffectSpeed;
+
+                // Wrap around if moved off screen due to scroll
+                if (p.y < 0) p.y += height;
+                if (p.y > height) p.y -= height;
+            });
+        });
 
         // Configuration
         const particleCount = 60; // Adjust for density
