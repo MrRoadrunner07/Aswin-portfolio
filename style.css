@@ -532,9 +532,38 @@ ul {
     max-width: 90% !important;
 }
 
+.contact-details {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-family: var(--font-body);
+}
+
+.contact-icon {
+    width: 24px;
+    height: 24px;
+    fill: var(--accent-cyan);
+    flex-shrink: 0;
+}
+
 .contact-container {
     max-width: 100%;
     margin: 0;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    /* Rounded card container */
+    backdrop-filter: blur(10px);
 }
 
 .contact-form {
@@ -554,6 +583,8 @@ ul {
     padding: 15px 20px;
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid var(--card-border);
+    border-radius: 12px;
+    /* Curved boxes */
     color: var(--text-primary);
     font-family: var(--font-body);
     font-size: 1rem;
@@ -574,44 +605,39 @@ ul {
 }
 
 .send-btn {
-    align-self: flex-end;
-    /* Align right */
-    padding: 15px 40px;
-    background: transparent;
-    color: var(--accent-cyan);
-    border: 1px solid var(--accent-cyan);
+    align-self: flex-start;
+    /* Reset alignment for inside card if needed, but flex-end works too */
+    width: 100%;
+    /* Full width button in the card looks good or auto */
+    padding: 18px 40px;
+    background: linear-gradient(90deg, var(--accent-cyan), #00c3ff);
+    /* Gradient Cyan */
+    color: #000;
+    border: none;
+    border-radius: 50px;
+    /* Pill shape */
     font-family: var(--font-heading);
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    text-transform: capitalize;
+    /* Normal case looks cleaner sometimes, but keeping consistent */
+    letter-spacing: 1px;
     cursor: pointer;
     transition: 0.3s;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 10px;
-    position: relative;
-    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 243, 255, 0.3);
 }
 
 .send-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: var(--accent-cyan);
-    z-index: -1;
-    transition: 0.4s;
-}
-
-.send-btn:hover::before {
-    left: 0;
+    display: none;
+    /* Removing the previous slide effect for the new solid gradient style */
 }
 
 .send-btn:hover {
-    color: #000;
-    box-shadow: 0 0 20px var(--accent-cyan);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 243, 255, 0.5);
 }
 
 .send-icon {
