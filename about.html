@@ -83,15 +83,29 @@
     <footer id="contact">
         <div class="container footer-content">
             <div class="contact-info">
-                <h2>Let's Collaborate</h2>
-                <p>Open for freelance projects and collaborations in UAE and abroad.</p>
-                <div class="contact-details">
-                    <a href="mailto:aswin.vijay141@gmail.com">aswin.vijay141@gmail.com</a>
-                    <a href="tel:+971552049498">+971 5520 49498</a>
-                    <p>Dubai, UAE</p>
+                <h2>Let's Talk</h2>
+                <div class="contact-container">
+                    <form class="contact-form"
+                        onsubmit="event.preventDefault(); alert('Message feature coming soon! This is a UI demo.');">
+                        <div class="form-group">
+                            <input type="text" class="form-input" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-input" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-textarea" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="send-btn">
+                            Send Message
+                            <svg class="send-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+                            </svg>
+                        </button>
+                    </form>
                 </div>
             </div>
-            <div class="social-links">
+            <div class="social-links" style="margin-top: 20px;">
                 <a href="#" target="_blank">LinkedIn</a>
                 <a href="#" target="_blank">Behance</a>
             </div>
