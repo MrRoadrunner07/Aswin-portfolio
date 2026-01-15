@@ -185,4 +185,57 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // --- YOUTUBE API FOR HOVER PLAY ---
+    // Load API Asynchronously
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    // Global callback for when API is ready
+    window.onYouTubeIframeAPIReady = function () {
+        const players = document.querySelectorAll('.yt-player');
+
+        players.forEach(playerDiv => {
+            const videoId = playerDiv.getAttribute('data-video-id');
+            const elementId = playerDiv.id;
+
+            new YT.Player(elementId, {
+                height: '100%',
+                width: '100%',
+                videoId: videoId,
+                playerVars: {
+                    'playsinline': 1,
+                    'controls': 0,    // Hide controls
+                    'mute': 1,        // Muted
+                    'rel': 0,         // No related videos
+                    'loop': 1,        // Loop
+                    'playlist': videoId, // Required for loop
+                    'showinfo': 0,
+                    'modestbranding': 1
+                },
+                events: {
+                    'onReady': onPlayerReady
+                }
+            });
+        });
+    };
+
+    function onPlayerReady(event) {
+        // Find the wrapper (anchor or parent div) to bind hover events
+        // The iframe is now the event.target.getIframe()
+        const iframe = event.target.getIframe();
+        const wrapper = iframe.closest('.video-link-wrapper'); // The anchor tag
+
+        if (wrapper) {
+            wrapper.addEventListener('mouseenter', () => {
+                event.target.playVideo();
+            });
+
+            wrapper.addEventListener('mouseleave', () => {
+                event.target.pauseVideo();
+            });
+        }
+    }
+
 });
