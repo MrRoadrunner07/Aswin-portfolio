@@ -77,12 +77,19 @@ ul {
 }
 
 .logo {
-    font-family: var(--font-heading);
-    font-size: 1.5rem;
-    font-weight: 900;
-    color: var(--text-primary);
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+}
+
+.main-logo {
+    height: 50px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.main-logo:hover {
+    transform: scale(1.05);
+    /* Subtle zoom on hover */
 }
 
 .nav-links {
@@ -791,9 +798,7 @@ ul {
 }
 
 /* Logo Default State */
-.mobile-logo {
-    display: none;
-}
+/* .mobile-logo rule removed as we use a single image now */
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -815,16 +820,13 @@ ul {
 
     /* Navbar Mobile Fixes */
     .navbar {
-        padding: 15px 20px;
-        /* Reduce padding */
+        padding: 10px 20px;
+        /* Reduce padding further */
     }
 
-    .desktop-logo {
-        display: none;
-    }
-
-    .mobile-logo {
-        display: block;
+    .main-logo {
+        height: 60px;
+        /* Slightly smaller on mobile if needed, or keep consistent. Let's try 40px for better fit */
     }
 
     .nav-links {
